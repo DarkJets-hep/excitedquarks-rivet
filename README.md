@@ -12,20 +12,25 @@ run-pythia --collision-energy 14000 -c "ExcitedFermion:dg2dStar = on" -c "Excite
 # Run the MCR_EXCITEDQUARKS_P Rivet analysis (the procedure is the same for MCR_EXCITEDQUARKS_4M):
 1. Pull the MCR_EXCITEDQUARKS_P.cc, MCR_EXCITEDQUARKS_P.plot file from Git
 2. Run the Rivet analysis:
+  2.1 Make an empty rivet analysis with the name MCR_EXCITEDQUARKS_P
 ```bash
 rivet-mkanalysis MCR_EXCITEDQUARKS_P
-nano MCR_EXCITEDQUARKS_P 
 ```  
-  When you open the MCR_EXCITEDQUARKS_P.cc file paste there the content from the file with the same name pulled from Git.
+  2.2 Open the MCR_EXCITEDQUARKS_P.cc file with a text editor and paste there the content from the file with the same name pulled from Git.
+```bash
+nano MCR_EXCITEDQUARKS_P 
+```
+  2.3 Compile the analysis and then run it on the already produced pythia.hempc file
 ```bash
 rivet-buildplugin RivetCUSTOM.so MCR_EXCITEDQUARKS_P.cc
 rivet --analysis=MCR_EXCITEDQUARKS_P pythia.hepmc 
 ``` 
 3. Produce the plots with Yoda: 
+  3.1 Open the MCR_EXCITEDQUARKS_P.plot file with a text editor and paste there the content from the file with the same name pulled from Git
 ```bash
 nano MCR_EXCITEDQUARKS_P.plot
 ```  
-When you open the MCR_EXCITEDQUARKS_P.plot file paste there the content from the file with the same name pulled from Git
+  3.2 Produce the plots using Yoda:
 ```bash
 rivet-mkhtml --pwd Rivet.yoda
 ```
