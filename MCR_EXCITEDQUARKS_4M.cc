@@ -8,11 +8,11 @@ namespace Rivet {
 
 
   /// @brief Just measures a few observables as a demo
-  class EXCITEDQUARKS_4M : public Analysis {
+  class MCR_EXCITEDQUARKS_4M : public Analysis {
   public:
 
     /// Constructor
-    DEFAULT_RIVET_ANALYSIS_CTOR(EXCITEDQUARKS_4M);
+    DEFAULT_RIVET_ANALYSIS_CTOR(MCR_EXCITEDQUARKS_4M);
 
 
     /// @name Analysis methods
@@ -81,6 +81,6 @@ namespace Rivet {
 
 
   // The hook for the plugin system
-  DECLARE_RIVET_PLUGIN(EXCITEDQUARKS_4M);
+  DECLARE_RIVET_PLUGIN(MCR_EXCITEDQUARKS_4M);
 
 }
