@@ -26,6 +26,7 @@ rivet-buildplugin RivetCUSTOM.so MCR_EXCITEDQUARKS_P.cc
 rivet --analysis=MCR_EXCITEDQUARKS_P pythia.hepmc 
 ``` 
 3. Produce the plots with Yoda
+
   3.1 Open the MCR_EXCITEDQUARKS_P.plot file with a text editor and paste there the content from the file with the same name pulled from Git
 ```bash
 nano MCR_EXCITEDQUARKS_P.plot
