@@ -6,9 +6,9 @@ Rivet routine to plot the four momentum of excited quarks. There are two Rivet a
 - [Rivet analysis](#rivetanalysis)
 - [Yoda plots](#yodaplots)
 
-## Installation:
+## Installation
 ## Setup
-## Event generation:
+## Event generation
 Use the Sacriface interface for Pythia to generate the events. The following code will generate 10 000 events of the processes qq*-->. After running the code, a pythia.hepmc file will be produced. 
 ```bash
 
@@ -16,29 +16,29 @@ run-pythia --collision-energy 14000 -c "ExcitedFermion:dg2dStar = on" -c "Excite
 
 ```
 
-## Rivet analysis:
-### Pull the MCR_EXCITEDQUARKS_P.cc, MCR_EXCITEDQUARKS_P.plot file from Git
+## Rivet analysis
+#### Pull the MCR_EXCITEDQUARKS_P.cc, MCR_EXCITEDQUARKS_P.plot file from Git
 ## Run the Rivet analysis:
-### Make an empty rivet analysis with the name MCR_EXCITEDQUARKS_P
+#### Make an empty rivet analysis with the name MCR_EXCITEDQUARKS_P
 ```bash
 rivet-mkanalysis MCR_EXCITEDQUARKS_P
 ```  
-### Open the MCR_EXCITEDQUARKS_P.cc file with a text editor and paste there the content from the file with the same name pulled from Git.
+#### Open the MCR_EXCITEDQUARKS_P.cc file with a text editor and paste there the content from the file with the same name pulled from Git.
 ```bash
 nano MCR_EXCITEDQUARKS_P 
 ```
-### Compile the analysis and then run it on the already produced pythia.hempc file
+#### Compile the analysis and then run it on the already produced pythia.hempc file
 ```bash
 rivet-buildplugin RivetCUSTOM.so MCR_EXCITEDQUARKS_P.cc
 rivet --analysis=MCR_EXCITEDQUARKS_P pythia.hepmc 
 ``` 
 ## Yoda plots
 
-### Open the MCR_EXCITEDQUARKS_P.plot file with a text editor and paste there the content from the file with the same name pulled from Git
+#### Open the MCR_EXCITEDQUARKS_P.plot file with a text editor and paste there the content from the file with the same name pulled from Git
 ```bash
 nano MCR_EXCITEDQUARKS_P.plot
 ```  
-### Produce the plots using Yoda:
+#### Produce the plots using Yoda:
 ```bash
 rivet-mkhtml --pwd Rivet.yoda
 ```
