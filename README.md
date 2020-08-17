@@ -50,8 +50,8 @@ $ git pull https://github.com/DarkJets-hep/excitedquarks-rivet.git
 The procedure is the same for any of the .cc files, the MCR_EXCITEDQUARKS_P.cc is used as example.
 Compile the analysis and then run it on the already produced pythia.hempc file
 ```bash
-rivet-buildplugin RivetCUSTOM.so MCR_EXCITEDQUARKS_P.cc
-rivet --analysis=MCR_EXCITEDQUARKS_P pythia.hepmc 
+$ rivet-buildplugin RivetCUSTOM.so MCR_EXCITEDQUARKS_P.cc
+$ rivet --analysis=MCR_EXCITEDQUARKS_P pythia.hepmc 
 ``` 
 ## Yoda plots
 Produce the plots using Yoda:
