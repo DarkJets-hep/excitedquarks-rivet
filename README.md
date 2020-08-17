@@ -42,33 +42,21 @@ cd excitedquarks-rivet
 ```
 Fetch the latest versions of the projects
 ```bash
-cd HEPAutoencoders
-git init
-git pull https://github.com/Autoencoders-compression-anomaly/AE-Compression-pytorch.git
+$ cd excitedquarks-rivet
+$ git init
+$ git pull https://github.com/DarkJets-hep/excitedquarks-rivet.git
 ```
 ## Run the Rivet analysis:
-#### Make an empty rivet analysis with the name MCR_EXCITEDQUARKS_P
-```bash
-rivet-mkanalysis MCR_EXCITEDQUARKS_P
-```  
-#### Open the MCR_EXCITEDQUARKS_P.cc file with a text editor and paste there the content from the file with the same name pulled from Git.
-```bash
-nano MCR_EXCITEDQUARKS_P 
-```
-#### Compile the analysis and then run it on the already produced pythia.hempc file
+The procedure is the same for any of the .cc files, the MCR_EXCITEDQUARKS_P.cc is used as example.
+Compile the analysis and then run it on the already produced pythia.hempc file
 ```bash
 rivet-buildplugin RivetCUSTOM.so MCR_EXCITEDQUARKS_P.cc
 rivet --analysis=MCR_EXCITEDQUARKS_P pythia.hepmc 
 ``` 
 ## Yoda plots
-
-#### Open the MCR_EXCITEDQUARKS_P.plot file with a text editor and paste there the content from the file with the same name pulled from Git
-```bash
-nano MCR_EXCITEDQUARKS_P.plot
-```  
-#### Produce the plots using Yoda:
+Produce the plots using Yoda:
 ```bash
 rivet-mkhtml --pwd Rivet.yoda
 ```
-The plots will be saved in a folder named "rivet-plots". 
+The plots will be saved to a folder named "rivet-plots". 
 
