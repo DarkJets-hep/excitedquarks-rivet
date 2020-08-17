@@ -31,8 +31,21 @@ run-pythia --collision-energy 14000 -c "ExcitedFermion:dg2dStar = on" -c "Excite
 
 ```
 
-## Rivet analysis
-#### Pull the MCR_EXCITEDQUARKS_P.cc, MCR_EXCITEDQUARKS_P.plot file from Git
+## Install the projects
+Create directories for the repository
+```bash
+mkdir excitedquarks-rivet
+```
+Access the directory
+```bash
+cd excitedquarks-rivet
+```
+Fetch the latest versions of the projects
+```bash
+cd HEPAutoencoders
+git init
+git pull https://github.com/Autoencoders-compression-anomaly/AE-Compression-pytorch.git
+```
 ## Run the Rivet analysis:
 #### Make an empty rivet analysis with the name MCR_EXCITEDQUARKS_P
 ```bash
