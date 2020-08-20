@@ -1,9 +1,9 @@
 # excitedquarks-rivet
-### Rivet routine to plot the four momentum of excited quarks. The following Rivet analysis are present: 
+#### Rivet routine to plot the four momentum of excited quarks. The following Rivet analysis are present: 
 - MCR_EXCITEDQUARKS_P.cc : uses the Particle class to obtain the 4-momentum of the events
 - MCR_EXCITEDQUARKS_4M.cc : uses the FourMomentum class to obtain the 4-momentum of the events
 - MCR_EXCITEDQUARKS_M.cc : uses the MCR_EXCITEDQUARKS_P.cc as a base but also plots the invariant mass of the dijet system 
-### The steps to obtain and run the Rivet analysis are as follow: 
+#### The steps to obtain and run the Rivet analysis are as follow: 
 - [Setup](#Setup)
 - [Install the projects](#Installtheprojects)
 - [Event generation](#eventgeneration)
