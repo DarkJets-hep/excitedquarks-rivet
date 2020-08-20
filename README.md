@@ -50,7 +50,7 @@ run-pythia --collision-energy 14000 -c "ExcitedFermion:dg2dStar = on" -c "Excite
 The procedure is the same for any of the .cc files, the MCR_EXCITEDQUARKS_P.cc is used as example.
 Compile the analysis and then run it on the already produced pythia.hempc file
 ```bash
-$ rivet-buildplugin RivetCUSTOM.so MCR_EXCITEDQUARKS_P.cc
+$ rivet-buildplugin MCR_EXCITEDQUARKS_P.cc
 $ rivet --analysis=MCR_EXCITEDQUARKS_P pythia.hepmc 
 ``` 
 ## Yoda plots
