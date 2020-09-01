@@ -20,6 +20,11 @@ Get updates (for Ubuntu systems):
 $ sudo apt-get update
 $ sudo apt-get install mercurial
 ```
+
+Get updates (for Mac):
+```bash
+$ brew install mercurial
+```
 Clone the repository: 
 ```bash
 hg clone https://bitbucket.org/Patrick_K_2016/mcnet-tutorial-vietnam
