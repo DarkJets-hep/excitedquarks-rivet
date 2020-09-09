@@ -15,7 +15,7 @@ Install Docker on your pc:
 ```bash
 https://www.docker.com/products/docker-desktop
 ```
-Pull the docker container containing Pythia:
+Pull the docker container containing Pythia 8.2:
 ```bash
 docker pull mcnetschool/tutorial:pythia-1.0.0
 ```
@@ -32,6 +32,10 @@ $ brew install mercurial
 Clone the repository: 
 ```bash
 hg clone https://bitbucket.org/Patrick_K_2016/mcnet-tutorial-vietnam
+```
+Install Rivet 3.0.2: 
+```bash
+https://rivet.hepforge.org/trac/wiki/GettingStarted
 ```
 ## Install the projects
 Create an empty directory where the project will be stored
