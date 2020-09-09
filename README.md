@@ -62,19 +62,21 @@ run-pythia --collision-energy 14000 -c "ExcitedFermion:dg2dStar = on" -c "Excite
 Details on the generation code: 
 ```bash
 run-pythia --collision-energy 14000 #Sets the center of mass energy to be 14 TeV 
--c "ExcitedFermion:dg2dStar = on" #Sets on the process dg --> d* --> dg
--c "ExcitedFermion:ug2uStar = on" #Sets on the process ug --> u* --> ug
+-c "ExcitedFermion:dg2dStar = on" #Sets on the process dg → d* → dg
+-c "ExcitedFermion:ug2uStar = on" #Sets on the process ug → u* → ug
+-c "4000001:m0 = 2000" #Sets the mass of the excited down quark to be 2 TeV
 -c "4000002:m0 = 2000" #Sets the mass of the excited up quark to be 2 TeV
 -c "ExcitedFermion:Lambda = 2000" #Sets the contact interaction to be 2 TeV 
--c "ExcitedFermion:coupF = 1.0" : Couplings to other particles → tells us how the excited quark decays (also below)
--c "ExcitedFermion:coupFprime = 1.0" 
--c "ExcitedFermion:coupFcol = 1.0" 
+-c "ExcitedFermion:coupF = 1.0" #Couplings to other particles
+-c "ExcitedFermion:coupFprime = 1.0" #Couplings to other particles
+-c "ExcitedFermion:coupFcol = 1.0" #Couplings to other particles
 -c "4000001:mayDecay = on" #Allows decay of the excited down quark
 -c "4000002:mayDecay = on" #Allows decay of the excited up quark
 -c "PhaseSpace:pTHatMin=30" #Sets the minimum cut on the momentum transfer of the interaction to be 30 GeV
 -n 10000 #Sets the number of events to be generated to be 10000
 ```
 After running the code, a pythia.hepmc file will be produced. 
+
 ## Run the Rivet analysis:
 The procedure is the same for any of the .cc files, the MCR_EXCITEDQUARKS_P.cc is used as example.
 Compile the analysis and then run it on the already produced pythia.hempc file
@@ -89,11 +91,10 @@ rivet-mkhtml --pwd Rivet.yoda:'Title=PYTHIA 8.2'
 ```
 The plots will be saved to a new directory: rivet-plots/MCR_EXCITEDQUARKS_P .
 #### The following plots will be produced: 
-- Number of events vs Invariant mass of the leading dijet system
 - Number of events vs Particle energy
 - Number of events vs Particle pseudorapidity
 - Number of  events vs Particle azimuthal angle
 - Number of events vs Particle transverse momentum
 - vs Total multiplicity
 - vs Total charged multiplicity
-
+- Number of events vs Invariant mass of the leading dijet system (for MCR_EXCITEDQUARKS_M.cc only)
