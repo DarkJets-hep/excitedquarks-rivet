@@ -34,7 +34,7 @@ Clone the repository:
 hg clone https://bitbucket.org/Patrick_K_2016/mcnet-tutorial-vietnam
 ```
 ## Install the projects
-Create directories for the repository
+Create an empty directory where the project will be stored
 ```bash
 mkdir excitedquarks-rivet
 ```
@@ -49,7 +49,7 @@ $ git init
 $ git pull https://github.com/DarkJets-hep/excitedquarks-rivet.git
 ```
 ## Event generation
-Run Pythia:
+Run Pythia in the same directory (excitedquarks-rivet):
 ```bash
 docker run -it -u $(id -u $USER) -v $PWD:$PWD -w $PWD --env="RIVET_ANALYSIS_PATH=." mcnetschool/tutorial:pythia-1.0.0
 ```
@@ -66,10 +66,11 @@ run-pythia --collision-energy 14000 #Sets the center of mass energy to be 14 TeV
 -c "ExcitedFermion:ug2uStar = on" #Sets on the process ug → u* → ug
 -c "4000001:m0 = 2000" #Sets the mass of the excited down quark to be 2 TeV
 -c "4000002:m0 = 2000" #Sets the mass of the excited up quark to be 2 TeV
--c "ExcitedFermion:Lambda = 2000" #Sets the contact interaction to be 2 TeV 
--c "ExcitedFermion:coupF = 1.0" #Couplings to other particles
--c "ExcitedFermion:coupFprime = 1.0" #Couplings to other particles
--c "ExcitedFermion:coupFcol = 1.0" #Couplings to other particles
+-c "ExcitedFermion:Lambda = 2000" #Sets the compositeness scale Lambda to be 2 TeV 
+#The following 3 lines allows couplings to other particles:
+-c "ExcitedFermion:coupF = 1.0" #Sets the strength f of the SU(2) coupling
+-c "ExcitedFermion:coupFprime = 1.0" #Sets the strength f' of the U(1) coupling
+-c "ExcitedFermion:coupFcol = 1.0" #Sets the strength f_c of the SU(3) coupling
 -c "4000001:mayDecay = on" #Allows decay of the excited down quark
 -c "4000002:mayDecay = on" #Allows decay of the excited up quark
 -c "PhaseSpace:pTHatMin=30" #Sets the minimum cut on the momentum transfer of the interaction to be 30 GeV
@@ -95,6 +96,6 @@ The plots will be saved to a new directory: rivet-plots/MCR_EXCITEDQUARKS_P .
 - Number of events vs Particle pseudorapidity
 - Number of  events vs Particle azimuthal angle
 - Number of events vs Particle transverse momentum
-- vs Total multiplicity
-- vs Total charged multiplicity
+- Total multiplicity
+- Total charged multiplicity
 - Number of events vs Invariant mass of the leading dijet system (for MCR_EXCITEDQUARKS_M.cc only)
