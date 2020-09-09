@@ -68,7 +68,7 @@ Produce the plots using Yoda:
 rivet-mkhtml --pwd Rivet.yoda:'Title=PYTHIA 8.2'
 ```
 The plots will be saved to a new directory: rivet-plots/MCR_EXCITEDQUARKS_P .
-###The following plots will be produced: 
+#### The following plots will be produced: 
 - Number of events vs Invariant mass of the leading dijet system
 - Number of events vs Particle energy
 - Number of events vs Particle pseudorapidity
