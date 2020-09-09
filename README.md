@@ -2,7 +2,7 @@
 #### Rivet routine to plot the four momentum of excited quarks. The following Rivet analysis are present: 
 - MCR_EXCITEDQUARKS_P.cc : uses the Particle class to obtain the 4-momentum of the events
 - MCR_EXCITEDQUARKS_4M.cc : uses the FourMomentum class to obtain the 4-momentum of the events
-- MCR_EXCITEDQUARKS_M.cc : uses the MCR_EXCITEDQUARKS_P.cc as a base but also plots the invariant mass of the dijet system 
+- MCR_EXCITEDQUARKS_M.cc : uses the MCR_EXCITEDQUARKS_P.cc as a base but also plots the invariant mass of the leading dijet system 
 #### The steps to obtain and run the Rivet analysis are as follow: 
 - [Setup](#Setup)
 - [Install the projects](#Installtheprojects)
@@ -65,7 +65,15 @@ $ rivet --analysis=MCR_EXCITEDQUARKS_P pythia.hepmc
 ## Yoda plots
 Produce the plots using Yoda:
 ```bash
-rivet-mkhtml --pwd Rivet.yoda
+rivet-mkhtml --pwd Rivet.yoda:'Title=PYTHIA 8.2'
 ```
-The plots will be saved to a folder named "rivet-plots". 
+The plots will be saved to a new directory: rivet-plots/MCR_EXCITEDQUARKS_P .
+###The following plots will be produced: 
+- Number of events vs Invariant mass of the leading dijet system
+- Number of events vs Particle energy
+- Number of events vs Particle pseudorapidity
+- Number of  events vs Particle azimuthal angle
+- Number of events vs Particle transverse momentum
+- vs Total multiplicity
+- vs Total charged multiplicity
 
