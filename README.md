@@ -11,6 +11,10 @@
 - [Yoda plots](#yodaplots)
 
 ## Setup
+Install Docker on your pc:
+```bash
+https://www.docker.com/products/docker-desktop
+```
 Pull the docker container containing Pythia:
 ```bash
 docker pull mcnetschool/tutorial:pythia-1.0.0
@@ -49,12 +53,29 @@ Run Pythia:
 ```bash
 docker run -it -u $(id -u $USER) -v $PWD:$PWD -w $PWD --env="RIVET_ANALYSIS_PATH=." mcnetschool/tutorial:pythia-1.0.0
 ```
-Use the Sacriface interface for Pythia to generate the events. The following code will generate 10 000 events of the processes ![equation](http://www.sciweavers.org/tex2img.php?eq=ug%20%5Crightarrow%20u%5E%2A%20%5Crightarrow%20ug&bc=White&fc=Black&im=jpg&fs=12&ff=modern&edit=0) and ![equation](http://www.sciweavers.org/tex2img.php?eq=dg%20%5Crightarrow%20d%5E%2A%20%5Crightarrow%20dg&bc=White&fc=Black&im=jpg&fs=12&ff=modern&edit=0). After running the code, a pythia.hepmc file will be produced. 
+Use the Sacriface interface for Pythia to generate the events. The following code will generate 10 000 events of the processes ![equation](http://www.sciweavers.org/tex2img.php?eq=ug%20%5Crightarrow%20u%5E%2A%20%5Crightarrow%20ug&bc=White&fc=Black&im=jpg&fs=12&ff=modern&edit=0) and ![equation](http://www.sciweavers.org/tex2img.php?eq=dg%20%5Crightarrow%20d%5E%2A%20%5Crightarrow%20dg&bc=White&fc=Black&im=jpg&fs=12&ff=modern&edit=0).
 ```bash
 
 run-pythia --collision-energy 14000 -c "ExcitedFermion:dg2dStar = on" -c "ExcitedFermion:ug2uStar = on" -c "4000001:m0 = 2000" -c "4000002:m0 = 2000" -c "ExcitedFermion:Lambda = 2000" -c "ExcitedFermion:coupF = 1.0" -c "ExcitedFermion:coupFprime = 1.0" -c "ExcitedFermion:coupFcol = 1.0" -c "4000001:mayDecay = on" -c "4000002:mayDecay = on" -c "PhaseSpace:pTHatMin=30" -n 10000
 
 ```
+Details on the generation code: 
+```bash
+run-pythia --collision-energy 14000 : Sets the center of mass energy to be 14 TeV 
+-c "ExcitedFermion:dg2dStar = on" : Sets on the process ![equation](http://www.sciweavers.org/tex2img.php?eq=dg%20%5Crightarrow%20d%5E%2A%20%5Crightarrow%20dg&bc=White&fc=Black&im=jpg&fs=12&ff=modern&edit=0)
+-c "ExcitedFermion:ug2uStar = on" : Sets on the process ![equation](http://www.sciweavers.org/tex2img.php?eq=ug%20%5Crightarrow%20u%5E%2A%20%5Crightarrow%20ug&bc=White&fc=Black&im=jpg&fs=12&ff=modern&edit=0)
+-c "4000001:m0 = 2000" : Sets the mass of the excited down quark to be 2 TeV
+-c "4000002:m0 = 2000" : Sets the mass of the excited up quark to be 2 TeV
+-c "ExcitedFermion:Lambda = 2000" : Sets the contact interaction to be 2 TeV 
+-c "ExcitedFermion:coupF = 1.0" : Couplings to other particles → tells us how the excited quark decays (also below)
+-c "ExcitedFermion:coupFprime = 1.0" 
+-c "ExcitedFermion:coupFcol = 1.0" 
+-c "4000001:mayDecay = on" : Allows decay of the excited down quark
+-c "4000002:mayDecay = on" : Allows decay of the excited up quark
+-c "PhaseSpace:pTHatMin=30" : Sets the minimum cut on the momentum transfer of the interaction to be 30 GeV
+-n 10000 : Sets the number of events to be generated to be 10000
+```
+After running the code, a pythia.hepmc file will be produced. 
 ## Run the Rivet analysis:
 The procedure is the same for any of the .cc files, the MCR_EXCITEDQUARKS_P.cc is used as example.
 Compile the analysis and then run it on the already produced pythia.hempc file
