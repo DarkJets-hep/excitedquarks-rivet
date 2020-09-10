@@ -31,7 +31,7 @@ Clone the repository:
 ```bash
 hg clone https://bitbucket.org/Patrick_K_2016/mcnet-tutorial-vietnam
 ```
-Install Rivet 3.0.2: 
+Install Rivet 3.0.2 by following this guide: 
 ```bash
 https://rivet.hepforge.org/trac/wiki/GettingStarted
 ```
