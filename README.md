@@ -1,8 +1,6 @@
 # excitedquarks-rivet
 #### Rivet routine to plot the four momentum of excited quarks. The following Rivet analysis are present: 
-- MCR_EXCITEDQUARKS_P.cc : uses the Particle class to obtain the 4-momentum of the events
-- MCR_EXCITEDQUARKS_4M.cc : uses the FourMomentum class to obtain the 4-momentum of the events
-- MCR_EXCITEDQUARKS_M.cc : uses the MCR_EXCITEDQUARKS_P.cc as a base but also plots the invariant mass of the leading dijet system 
+- MCR_EXCITEDQUARKS_M.cc : uses the Particle class to obtain the 4-momentum of the events and the invariant mass of the leading dijet system 
 #### The steps to obtain and run the Rivet analysis are as follow: 
 - [Setup](#Setup)
 - [Install the projects](#Installtheprojects)
@@ -83,18 +81,18 @@ run-pythia --collision-energy 14000 #Sets the center of mass energy to be 14 TeV
 After running the code, a pythia.hepmc file will be produced. 
 
 ## Run the Rivet analysis:
-The procedure is the same for any of the .cc files, the MCR_EXCITEDQUARKS_P.cc is used as example.
+The procedure is the same for any of the .cc files, the MCR_EXCITEDQUARKS_M.cc is used as example.
 Compile the analysis and then run it on the already produced pythia.hempc file
 ```bash
-$ rivet-buildplugin MCR_EXCITEDQUARKS_P.cc
-$ rivet --analysis=MCR_EXCITEDQUARKS_P pythia.hepmc 
+$ rivet-buildplugin MCR_EXCITEDQUARKS_M.cc
+$ rivet --analysis=MCR_EXCITEDQUARKS_M pythia.hepmc 
 ``` 
 ## Yoda plots
 Produce the plots using Yoda:
 ```bash
 rivet-mkhtml --pwd Rivet.yoda:'Title=PYTHIA 8.2'
 ```
-The plots will be saved to a new directory: rivet-plots/MCR_EXCITEDQUARKS_P .
+The plots will be saved to a new directory: rivet-plots/MCR_EXCITEDQUARKS_M .
 #### The following plots will be produced: 
 - Number of events vs Particle energy
 - Number of events vs Particle pseudorapidity
@@ -102,4 +100,4 @@ The plots will be saved to a new directory: rivet-plots/MCR_EXCITEDQUARKS_P .
 - Number of events vs Particle transverse momentum
 - Total multiplicity
 - Total charged multiplicity
-- Number of events vs Invariant mass of the leading dijet system (for MCR_EXCITEDQUARKS_M.cc only)
+- Number of events vs Invariant mass of the leading dijet system
