@@ -69,7 +69,6 @@ run-pythia --collision-energy 14000 #Sets the center of mass energy to be 14 TeV
 -c "4000001:m0 = 2000" #Sets the mass of the excited down quark to be 2 TeV
 -c "4000002:m0 = 2000" #Sets the mass of the excited up quark to be 2 TeV
 -c "ExcitedFermion:Lambda = 2000" #Sets the compositeness scale Lambda to be 2 TeV 
-#The following 3 lines allows couplings to other particles:
 -c "ExcitedFermion:coupF = 1.0" #Sets the strength f of the SU(2) coupling
 -c "ExcitedFermion:coupFprime = 1.0" #Sets the strength f' of the U(1) coupling
 -c "ExcitedFermion:coupFcol = 1.0" #Sets the strength f_c of the SU(3) coupling
