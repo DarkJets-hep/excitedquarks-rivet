@@ -84,7 +84,7 @@ The procedure is the same for any of the .cc files, the MCR_EXCITEDQUARKS_M.cc i
 Compile the analysis and then run it on the already produced pythia.hempc file
 ```bash
 $ rivet-buildplugin MCR_EXCITEDQUARKS_M.cc
-$ rivet --analysis=MCR_EXCITEDQUARKS_M pythia.hepmc 
+$ rivet --analysis=MCR_EXCITEDQUARKS_M pythia.hepmc --pwd
 ``` 
 ## Yoda plots
 Produce the plots using Yoda:
